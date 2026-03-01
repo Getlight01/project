@@ -5,22 +5,22 @@ import (
 )
 
 type User struct {
-	ID           string     `json:"id"`
-	Email        string     `json:"email"`
-	PasswordHash string   `json:"-"`
-	DisplayName  string     `json:"displayName"`
-	Gender       *string    `json:"gender"` // male, female, unisex, or null
-	CreatedAt    time.Time  `json:"createdAt"`
-	UpdatedAt    time.Time  `json:"updatedAt"`
+	ID           string    `json:"id"`
+	Email        string    `json:"email"`
+	PasswordHash string    `json:"-"`
+	DisplayName  string    `json:"displayName"`
+	Gender       *string   `json:"gender"`
+	CreatedAt    time.Time `json:"createdAt"`
+	UpdatedAt    time.Time `json:"updatedAt"`
 }
 
 type BodyPart string
 
 const (
-	BodyPartTop      BodyPart = "top"
-	BodyPartBottom   BodyPart = "bottom"
-	BodyPartOuter    BodyPart = "outer"
-	BodyPartShoes    BodyPart = "shoes"
+	BodyPartTop       BodyPart = "top"
+	BodyPartBottom    BodyPart = "bottom"
+	BodyPartOuter     BodyPart = "outer"
+	BodyPartShoes     BodyPart = "shoes"
 	BodyPartAccessory BodyPart = "accessory"
 )
 
@@ -32,21 +32,13 @@ type Item struct {
 	ThumbnailURL string    `json:"thumbnailUrl"`
 	SourceURL    *string   `json:"sourceUrl,omitempty"`
 	UploadedAt   time.Time `json:"uploadedAt"`
-
-
-
-
-
-
-
-
 }
 
 type Look struct {
 	ID           string    `json:"id"`
 	UserID       string    `json:"userId"`
 	Items        []Item    `json:"items"`
-	ModelGender  string    `json:"modelGender"` // male, female
+	ModelGender  string    `json:"modelGender"`
 	ModelPhotoID string    `json:"modelPhotoId"`
 	RenderedURL  string    `json:"renderedUrl"`
 	Score        float64   `json:"score"`
@@ -64,16 +56,9 @@ type LookMeta struct {
 
 type ModelPhoto struct {
 	ID       string `json:"id"`
-	Gender   string `json:"gender"` // male, female
+	Gender   string `json:"gender"`
 	ImageURL string `json:"imageUrl"`
-	Pose     string `json:"pose"`   // standing, sitting, etc.
-
-
-
-
-
-
-
+	Pose     string `json:"pose"`
 }
 
 type Position struct {
@@ -105,8 +90,8 @@ type UploadItemRequest struct {
 }
 
 type GenerateLooksRequest struct {
-	ItemIDs     []string          `json:"itemIds"`
-	Preferences *LookPreferences  `json:"preferences,omitempty"`
+	ItemIDs     []string         `json:"itemIds"`
+	Preferences *LookPreferences `json:"preferences,omitempty"`
 }
 
 type LookPreferences struct {

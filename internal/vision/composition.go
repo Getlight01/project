@@ -54,6 +54,8 @@ func (ic *ImageComposer) simpleCompose(
 	if err != nil {
 		fmt.Printf("[ComposeLook] Model not found at %s: %v, creating placeholder\n", modelPath, err)
 		modelImg = image.NewRGBA(image.Rect(0, 0, 512, 768))
+	} else {
+		fmt.Printf("[ComposeLook] Model loaded successfully\n")
 	}
 
 	resultBounds := modelImg.Bounds()

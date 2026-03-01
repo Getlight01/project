@@ -57,6 +57,7 @@ export default function LookGenerator({
       alert('Выберите минимум 2 вещи для генерации образа')
       return
     }
+    // Pass item IDs to generate looks
     onGenerate(Array.from(selectedItems))
   }
 

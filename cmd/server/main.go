@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"path/filepath"
 	"strings"
 
 	"fashion-look-generator/internal/api"
@@ -51,6 +52,11 @@ func main() {
 	if storagePath == "" {
 		storagePath = "./storage"
 	}
+	// Ensure absolute path for proper file operations
+	absPath, err := filepath.Abs(storagePath)
+	if err == nil {
+		storagePath = absPath
+	}
 	fileStorage := storage.NewFileStorage(storagePath)
 
 	fashionDB, err := fashion.LoadFashionDB("./data/fashion_db.json")
@@ -66,7 +72,8 @@ func main() {
 	router := mux.NewRouter()
 
 	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "./dist/index.html")
+		w.Header().Set("Content-Type", "text/plain")
+		w.Write([]byte("Fashion Look Generator is running!"))
 	})
 
 	router.PathPrefix("/models/").Handler(
