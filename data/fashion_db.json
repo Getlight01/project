@@ -1,0 +1,232 @@
+{
+  "rules": {
+    "maxItemsPerLook": 5,
+    "minItemsPerLook": 2,
+    "allowSameCategory": false,
+    "preferredSeasons": ["spring", "summer", "autumn", "winter"]
+  },
+  "colorPalette": {
+    "complementary": {
+      "blue": ["orange", "yellow"],
+      "red": ["green", "turquoise"],
+      "green": ["red", "pink"],
+      "black": ["white", "red"],
+      "white": ["black", "navy"]
+    },
+    "analogous": {
+      "blue": ["navy", "cyan", "purple"],
+      "red": ["pink", "orange", "burgundy"],
+      "green": ["olive", "teal", "lime"],
+      "gray": ["black", "white", "silver"],
+      "beige": ["brown", "cream", "tan"]
+    },
+    "neutral": ["black", "white", "gray", "beige", "brown", "navy", "cream", "olive", "khaki", "denim"],
+    "seasonal": {
+      "spring": ["pastel", "light", "bright", "lavender", "mint"],
+      "summer": ["white", "blue", "light", "cream", "beige"],
+      "autumn": ["brown", "orange", "olive", "burgundy", "khaki"],
+      "winter": ["black", "navy", "dark", "gray", "white"]
+    },
+    "teen_favorites": {
+      "girls": ["лавандовый", "мятный", "белый", "кремовый", "розовый", "голубой", "пастельно-розовый"],
+      "boys": ["чёрный", "хаки", "тёмно-синий", "серый", "графит", "оливковый", "деним"]
+    }
+  },
+  "color_theory": {
+    "base_colors": [
+      "чёрный", "белый", "серый", "графит", "кремовый", "бежевый",
+      "хаки", "оливковый", "деним-синий", "индиго"
+    ],
+    "color_schemes": [
+      {
+        "type": "monochrome",
+        "description": "Оттенки одного цвета, разной насыщенности.",
+        "rules": [
+          "Разрешено до 3 оттенков одного цвета.",
+          "Текстуры должны отличаться (хлопок + трикотаж).",
+          "Обувь выбирается в соседнем оттенке."
+        ],
+        "examples": [
+          ["чёрный", "графит", "серый"],
+          ["бежевый", "кремовый", "молочный"]
+        ]
+      },
+      {
+        "type": "analog",
+        "description": "Близкие оттенки по цветовому кругу.",
+        "rules": [
+          "2–3 соседних цвета.",
+          "Один должен быть «якорным» — спокойным.",
+          "Акцент допускается минимальный."
+        ],
+        "examples": [
+          ["голубой", "синий", "фиолетовый"],
+          ["розовый", "пастельно-фиолетовый", "лаванда"]
+        ]
+      },
+      {
+        "type": "complementary",
+        "description": "Противоположные цвета.",
+        "rules": [
+          "Использовать 1 яркий + 1 спокойный тон.",
+          "Третий элемент — нейтральный.",
+          "Не более 1 акцентного аксессуара."
+        ],
+        "examples": [
+          ["оранжевый", "синий"],
+          ["красный", "зелёный"]
+        ]
+      },
+      {
+        "type": "neutral_accent",
+        "description": "Нейтральная база с ярким акцентом.",
+        "rules": [
+          "База: серый, белый, кремовый, хаки.",
+          "Акцент: обувь, аксессуары, верх.",
+          "Акцент должен быть один."
+        ],
+        "examples": [
+          ["серый", "чёрный", "красный"],
+          ["кремовый", "хаки", "терракотовый"]
+        ]
+      }
+    ],
+    "forbidden_combinations": [
+      "чёрный + тёмно-коричневый",
+      "жёлтый неон + фиолетовый насыщенный",
+      "оранжевый неон + салатовый",
+      "красный + розовый без нейтрали"
+    ]
+  },
+  "styles": {
+    "casual": {
+      "name": "casual",
+      "description": "Повседневный стиль",
+      "occasions": ["work", "travel", "daily"],
+      "colors": ["blue", "gray", "white", "beige", "denim"],
+      "items": ["top", "bottom", "shoes"]
+    },
+    "formal": {
+      "name": "formal",
+      "description": "Деловой стиль",
+      "occasions": ["work", "meeting"],
+      "colors": ["black", "navy", "gray", "white"],
+      "items": ["top", "bottom", "outer", "shoes"]
+    },
+    "elegant": {
+      "name": "elegant",
+      "description": "Элегантный стиль",
+      "occasions": ["date", "party", "event"],
+      "colors": ["black", "red", "navy", "gold"],
+      "items": ["top", "bottom", "outer", "shoes", "accessory"]
+    },
+    "sport": {
+      "name": "sport",
+      "description": "Спортивный стиль",
+      "occasions": ["travel", "daily"],
+      "colors": ["bright", "neon", "black", "gray"],
+      "items": ["top", "bottom", "shoes"]
+    },
+    "y2k": {
+      "name": "Y2K",
+      "description": "Ретро-футуризм 2000-х",
+      "occasions": ["party", "daily"],
+      "colors": ["розовый", "серебристый", "кремовый", "белый", "голубой"],
+      "items": ["top", "bottom", "shoes", "accessory"],
+      "features": ["низкая посадка", "кроп-топы", "мини-юбки", "блестящие ткани", "платформенные кеды"],
+      "avoid": ["классические строгие элементы", "объёмные пальто"]
+    },
+    "soft_girl": {
+      "name": "Soft girl",
+      "description": "Нежный женственный стиль",
+      "occasions": ["date", "daily"],
+      "colors": ["лавандовый", "пастельно-розовый", "молочный", "голубой"],
+      "items": ["top", "bottom", "shoes", "accessory"],
+      "features": ["пастельные тона", "плиссированные юбки", "oversize свитеры", "украшения сердечки"],
+      "avoid": ["грубые ботинки", "тёмные панк-элементы"]
+    },
+    "streetwear": {
+      "name": "Streetwear",
+      "description": "Уличный стиль",
+      "occasions": ["daily", "travel"],
+      "colors": ["хаки", "чёрный", "белый", "серый", "деним"],
+      "items": ["top", "bottom", "shoes", "outer"],
+      "features": ["oversize худи", "baggy джинсы", "массивные кроссовки", "бейсболки"],
+      "avoid": ["обтягивающие платья", "туфли"]
+    },
+    "techwear": {
+      "name": "Techwear",
+      "description": "Технологичный стиль",
+      "occasions": ["daily", "travel"],
+      "colors": ["чёрный", "графит", "серый", "оливковый"],
+      "items": ["top", "bottom", "shoes", "outer"],
+      "features": ["тёмная монохромность", "функциональные ткани", "жилеты-системы", "много карманов"],
+      "avoid": ["пастельные элементы"]
+    },
+    "skater": {
+      "name": "Skater",
+      "description": "Скейтбордический стиль",
+      "occasions": ["daily", "travel"],
+      "colors": ["деним", "чёрный", "белый", "красный"],
+      "items": ["top", "bottom", "shoes"],
+      "features": ["графичные футболки", "wide jeans", "Vans", "толстовки"],
+      "avoid": ["классические пальто"]
+    }
+  },
+  "combinations": [
+    {"parts": ["top", "bottom"], "style": "casual", "scoreBonus": 0.1},
+    {"parts": ["top", "bottom", "shoes"], "style": "casual", "scoreBonus": 0.2},
+    {"parts": ["top", "bottom", "outer", "shoes"], "style": "formal", "scoreBonus": 0.3},
+    {"parts": ["top", "bottom", "shoes", "accessory"], "style": "elegant", "scoreBonus": 0.25},
+    {"parts": ["top", "bottom", "shoes"], "style": "y2k", "scoreBonus": 0.2},
+    {"parts": ["top", "bottom", "shoes"], "style": "soft_girl", "scoreBonus": 0.2},
+    {"parts": ["top", "bottom", "shoes"], "style": "streetwear", "scoreBonus": 0.2},
+    {"parts": ["top", "bottom", "shoes"], "style": "techwear", "scoreBonus": 0.2},
+    {"parts": ["top", "bottom", "shoes"], "style": "skater", "scoreBonus": 0.2}
+  ],
+  "textures": {
+    "rules": [
+      "Если цвета близки — текстуры должны различаться.",
+      "Гладкая ткань + фактурная ткань = визуальный баланс.",
+      "Джинса сочетается почти со всеми типами поверхностей.",
+      "Не сочетать 2 слишком блестящих материала в одном луке.",
+      "Трикотаж лучше комбинировать с чем-то жёстким (деним, кожа)."
+    ],
+    "bad_combinations": [
+      "кожа + лаковая кожа",
+      "бархат + атлас ярких цветов"
+    ]
+  },
+  "season_rules": {
+    "winter": {
+      "allowed_colors": ["графит", "чёрный", "хаки", "бежевый", "бордовый"],
+      "layering": ["толстовка + пуховик", "лонгслив + худи + куртка"]
+    },
+    "summer": {
+      "allowed_colors": ["белый", "кремовый", "голубой", "лавандовый", "пастель"],
+      "layering": ["кроп-топ + лёгкая рубашка", "t-shirt + жилет"]
+    }
+  },
+  "look_generator": {
+    "rules": [
+      "Образ должен включать: низ + верх + обувь (обязательно).",
+      "Аксессуары добавлять только после выбора стиля.",
+      "Не более одного яркого элемента.",
+      "Избегать конфликтов по текстурам.",
+      "Учитывать сезон."
+    ],
+    "score_weights": {
+      "color_match": 0.45,
+      "style_match": 0.35,
+      "texture_harmony": 0.1,
+      "season_match": 0.1
+    }
+  },
+  "tips": [
+    "Сочетайте не более 3 основных цветов в образе",
+    "Используйте аксессуары для завершения образа",
+    "Учитывайте сезон при выборе материалов",
+    "Обувь должна соответствовать стилю образа",
+    "Для подростков: Y2K, Soft girl, Streetwear - самые популярные стили"
+  ]
+}
