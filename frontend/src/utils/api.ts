@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useAuthStore } from '../store/authStore'
 
+// Use relative API path - will work both locally (via Vite proxy) and production (via Go)
 const api = axios.create({
   baseURL: '/api',
   headers: {
