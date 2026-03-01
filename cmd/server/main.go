@@ -19,16 +19,6 @@ import (
 
 func main() {
 
-
-
-
-
-
-
-
-
-
-
 	kandinskyAPIKey := os.Getenv("KANDINSKY_API_KEY")
 	kandinskySecretKey := os.Getenv("KANDINSKY_SECRET_KEY")
 
@@ -46,9 +36,6 @@ func main() {
 
 	jwtSecret := os.Getenv("JWT_SECRET")
 	if jwtSecret == "" {
-
-
-
 
 		jwtSecret = "development-secret-key-change-in-production"
 		log.Println("WARNING: Using default JWT secret. Set JWT_SECRET env var for production.")
@@ -70,9 +57,6 @@ func main() {
 	if err != nil {
 		log.Printf("Warning: Failed to load fashion database: %v", err)
 
-
-
-
 	}
 
 	authService := auth.NewService(jwtSecret, db)
@@ -81,6 +65,9 @@ func main() {
 
 	router := mux.NewRouter()
 
+	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "./dist/index.html")
+	})
 
 	router.PathPrefix("/models/").Handler(
 		http.StripPrefix("/models/", http.FileServer(http.Dir("./storage/models"))),
