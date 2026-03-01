@@ -80,15 +80,20 @@ func main() {
 	apiRouter.HandleFunc("/look/{id}", handlers.DeleteLook).Methods("DELETE")
 	apiRouter.HandleFunc("/models", handlers.GetModels).Methods("GET")
 
-	// Static files
+	// Static files - order matters! More specific paths first
 	router.PathPrefix("/models/").Handler(http.StripPrefix("/models/", http.FileServer(http.Dir("./storage/models"))))
 	router.PathPrefix("/looks/").Handler(http.StripPrefix("/looks/", http.FileServer(http.Dir("./storage/looks"))))
 	router.PathPrefix("/uploads/").Handler(http.StripPrefix("/uploads/", http.FileServer(http.Dir("./storage/uploads"))))
 	router.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("./dist/assets"))))
 
-	// Serve index.html for root and all other routes (SPA)
+	// Serve all other static files from dist (including landing.jpg)
+	router.PathPrefix("/").Handler(http.StripPrefix("/", http.FileServer(http.Dir("./dist"))))
+
+	// SPA fallback - serve index.html for root
 	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "./dist/index.html")
+		if r.URL.Path == "/" {
+			http.ServeFile(w, r, "./dist/index.html")
+		}
 	})
 
 	handler := enableCORS(router)
